@@ -1,0 +1,10 @@
+development:
+  API_BASE_URL: 'http://127.0.0.1:3000'
+
+test:
+  API_BASE_URL: 'http://127.0.0.1:3000'
+
+production:
+  API_BASE_URL: 'http://127.0.0.1:3000'
+
+
