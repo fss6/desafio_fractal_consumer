@@ -1,0 +1,51 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">
+      <strong> <%= t(:other, scope: [:models, :project]) %> </strong>
+    </h3>
+    <div class="pull-right">
+      <%= link_to t(:create, scope: [:actions]), new_project_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <div class="box-body">
+    <%= form_tag({controller: :projects, action: :index}, method: :get) do %>
+      <%= text_field_tag :term, nil, class: 'form-control', placeholder: 'Digite um termo' %>
+    <% end %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t(:name, scope: [:models, :project, :attributes]) %></th>
+          <th><%= t(:one, scope: [:models, :category ]) %></th>
+          <th>
+            <%= t(:other, scope: [:models, :task ]) %>
+          </th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% get_collection(@projects).each do |project| %>
+          <tr>
+            <td>
+              <%= get_attribute_value_from(project, :name) %>
+            </td>
+            <td>
+              <%= get_relationship_attribute_value_from(project, :category, :name) %>
+            </td>
+            <td>
+              <%= get_relationship_from(project, :tasks).count %>
+            </td>
+            <td>
+              <%= link_to t(:show, scope: [:actions]), project_path(project[:id]) %>
+            </td>
+            <td>
+              <%= link_to t(:edit, scope: [:actions]), edit_project_path(project[:id]) %>
+            </td>
+            <td>
+              <%= link_to t(:delete, scope: [:actions]), project_path(project[:id]), :method => :delete %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

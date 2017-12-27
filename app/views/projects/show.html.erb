@@ -1,0 +1,25 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">
+      <%= get_attribute_value_from(@project, :name) %>
+    </h3>
+  </div>
+  <div class="box-body">
+    <p>
+      <strong><%= t(:one, scope: [:models, :category]) %>:</strong>
+      <%= get_relationship_attribute_value_from(@project, :category, :name) %>
+    </p>
+
+    <p>
+      <strong>
+        <%= t(:description, scope: [:models, :project, :attributes]) %>:
+      </strong>
+      <%= get_attribute_value_from(@project, :description) %>
+    </p>
+
+  </div>
+  <!-- /.box-body -->
+  <div class="box-footer">
+    <%= link_to 'Voltar', projects_path, class: "btn btn-default" %>
+  </div>
+</div>
