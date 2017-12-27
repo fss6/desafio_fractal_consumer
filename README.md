@@ -12,7 +12,7 @@ logins: {
  	haie@ryan.info
  	annette@markstromp.co
 	kip_veum@rogahn.info
-    donny@weberklein.name
+  donny@weberklein.name
 	sherwood@powlowskiwilderman.biz
 	gregory@ortiz.info
 	talia.yundt@wintheiserlehner.co
@@ -24,7 +24,7 @@ logins: {
 	trinity.schmidt@barton.biz
 	reed.sawayn@rodriguezstracke.com
 }
-password: 12345678
+passwords: 12345678
 
 Configurações iniciais:
 
