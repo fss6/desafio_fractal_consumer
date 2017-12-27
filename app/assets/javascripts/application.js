@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require jquery.turbolinks
+//= require toastr_rails
 //= require bootstrap.min
 //= require adminlte.min
 //= require_tree .

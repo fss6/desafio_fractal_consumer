@@ -1,0 +1,37 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">
+      <strong> <%= t(:other, scope: [:models, :task]) %> </strong>
+    </h3>
+  </div>
+  <div class="box-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t(:name, scope: [:models, :task, :attributes]) %></th>
+          <th><%= t(:one, scope: [:models, :project ]) %></th>
+          <th><%= t(:done, scope: [:models, :task, :attributes]) %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% get_collection(@tasks).each do |task| %>
+          <tr>
+            <td>
+              <%= get_attribute_value_from(task, :name) %>
+            </td>
+            <td>
+              <%= get_relationship_attribute_value_from(task, :project, :name) %>
+            </td>
+            <td>
+              <%= get_attribute_value_from(task, :done) %>
+            </td>
+            <td>
+              <%= link_to t(:show, scope: [:actions]), controller: task[:type], action: 'show', id: task[:id] %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

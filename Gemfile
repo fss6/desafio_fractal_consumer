@@ -19,6 +19,16 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem "figaro"
+# Rest Client
+gem 'rest-client', '~> 2.0', '>= 2.0.2'
+# Toastr notification
+gem 'toastr_rails', '~> 2.1', '>= 2.1.3'
+# Ransack search
+gem 'ransack', '~> 1.8', '>= 1.8.4'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
